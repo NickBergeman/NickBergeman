@@ -1,0 +1,19 @@
+#Random Number Guessing Game
+import random
+secretNumber=random.randint(1,20)     #Picks a random number 1-20, this will be the number the player tries to guess. 
+print("I am thinking of a number between 1 and 20")
+
+for guessesTaken in range(1,7):    #Player has 7 guesses to guess the number
+    print('Take a guess.')
+    guess=int(input())            #Player input
+    
+    if guess < secretNumber:
+        print("Your guess is too low.")
+    elif guess > secretNumber:
+        print("Your guess is too high.")
+    else:
+        break
+if guess == secretNumber:
+    print('Good job! You guessed my number in ' + str(guessesTaken) + ' guesses!')
+else:
+    print('Nope. The number I was thinking of was ' + str(secretNumber))
